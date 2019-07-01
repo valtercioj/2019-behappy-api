@@ -9,6 +9,8 @@
   "scripts": {
     "dev-start": "nodemon bootstrap",
     "start": "node bootstrap",
+    "migration": "knex migrate:latest",
+    "seed": "knex seed:run",
     "postinstall": ""
   },
   "keywords": [
