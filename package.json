@@ -1,34 +1,30 @@
 {
-  "name": "tarefas-api",
-  "version": "0.0.1",
-  "description": "API do App Lista de tarefas",
-  "main": "bootstrap.js",
-  "engines": {
-    "node": "10.11.0"
-  },
+  "name": "apipos",
+  "version": "1.0.0",
+  "description": "projeto escolar",
+  "main": "server.js",
   "scripts": {
-    "dev-start": "nodemon bootstrap",
     "start": "node bootstrap",
-    "migration": "knex migrate:latest",
-    "seed": "knex seed:run",
-    "postinstall": ""
+    "start:dev": "nodemon bootstrap",
+    "knex:make": "knex migrate:make tasks && knex seed:make tasks",
+    "knex:start": "knex migrate:latest && knex seed:run",
+    "test": "echo none"
   },
   "keywords": [
     "api",
-    "todo",
-    "tarefas",
-    "hapi"
+    "knex",
+    "express"
   ],
-  "author": "L A MINORA",
-  "license": "ISC",
+  "author": "pedro de lucas (cripboy)",
+  "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "^18.3.1",
     "babel-core": "^6.26.3",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "express": "^4.17.1",
     "knex": "^0.15.2",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.19.1",
     "sqlite3": "^4.0.2"
   }
 }

@@ -5,8 +5,9 @@ module.exports = {
 
     client: "sqlite3",
     connection: {
-      filename: "./mydb.sqlite",
-      charset: "utf8"
+      filename: "./behappy.sqlite",
+      charset: "utf8",
+      useNullAsDefault: true
     }
   },
   production: {
@@ -15,8 +16,9 @@ module.exports = {
 
     client: "sqlite3",
     connection: {
-      filename: "./mydb.sqlite",
-      charset: "utf8"
+      filename: "./behappy.sqlite",
+      charset: "utf8",
+      useNullAsDefault: true
     }
   }
 };
