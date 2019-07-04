@@ -8,5 +8,5 @@
 
 ## Modo de Uso
 1. `npm run knex:make`
-2. `npm run knex:make`
+2. `npm run knex:start`
 3. `npm run start` or `npm run start:dev`
