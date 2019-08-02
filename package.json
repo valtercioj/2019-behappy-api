@@ -18,11 +18,16 @@
   "author": "pedro de lucas (cripboy)",
   "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "babel-core": "^6.26.3",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-joi-validation": "^2.0.0",
+    "joi": "^14.3.1",
+    "joi-express": "^1.0.3",
     "knex": "^0.15.2",
     "nodemon": "^1.19.1",
     "sqlite3": "^4.0.2"
