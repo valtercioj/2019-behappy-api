@@ -1,6 +1,6 @@
 import express from 'express';
 import appRouter from './routes/root';
-import apiRouter from './routes/api';
+import tasksRouter from './routes/tasks';
 import bodyParser from "body-parser";
 
 // config
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // set routers
 app.use('/', appRouter);
-app.use('/tasks', apiRouter);
+app.use('/tasks', tasksRouter);
 
 // start server
 app.listen(PORT, error => (
