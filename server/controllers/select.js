@@ -1,9 +1,7 @@
-import knex from '../../../config/knex';
+import { Task } from '../models';
 
 export default function(req, res, next) {
-	knex
-	.from("tasks")
-	.select('id', 'title', 'description')
+	Task.getAll()
 	.then(results => res.send(results))
 	.catch(err => res.status(500).send(err))
 }

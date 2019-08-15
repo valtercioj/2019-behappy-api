@@ -3,9 +3,11 @@ import Joi from "@hapi/joi";
 import ExpressJoi from "joi-express";
 
 // Controllers
-import t_delete from "./controller/delete.js";
-import t_select from "./controller/select.js";
-import t_insert from "./controller/insert.js";
+import t_delete from "../../Controllers/delete.js";
+import t_select from "../../controllers/select.js";
+import t_selectById from "../../controllers/selectById.js";
+import t_insert from "../../controllers/insert.js";
+import t_done from "../../controllers/done.js";
 
 // Config
 var router = express.Router();
@@ -16,9 +18,17 @@ var querySchema = {
     }
 };
 
-// Routes
-router.get('/', t_select);
-router.delete('/:id', t_delete);
-router.post('/', ExpressJoi(querySchema), t_insert);
+// select
+router.get('/', t_select.bind(this));
+router.get('/:id', t_selectById.bind(this));
+
+// delete
+router.delete('/:id', t_delete.bind(this));
+
+// insert
+router.post('/', ExpressJoi(querySchema), t_insert.bind(this));
+
+// done
+router.post('/:id/done', t_done.bind(this));
 
 export default router;

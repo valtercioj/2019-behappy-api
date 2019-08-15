@@ -1,4 +1,4 @@
-import knex from '../../../config/knex';
+import { Task } from '../models';
 
 const delete_response_code = result => (result == 1 ? 200 : 400);
 const delete_response = (result, task_id) => {
@@ -24,13 +24,10 @@ const delete_response = (result, task_id) => {
 };
 
 export default function(req, res, next) {
-	knex
-	.from("tasks")
-	.where("oid", req.params.id)
-	.del()
-	.then(results => 
+	Task.deleteById(req.params.id)
+	.then(results => {
 		res
 		.status(delete_response_code(results))
-		.send(delete_response(results, req.params.id)))
-	.catch(error => console.log(error));
+		.send(delete_response(results, req.params.id))
+	});
 }

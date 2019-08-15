@@ -7,8 +7,7 @@
     "start": "node bootstrap",
     "start:dev": "nodemon bootstrap",
     "knex:make": "knex migrate:make tasks && knex seed:make tasks",
-    "knex:start": "knex migrate:latest && knex seed:run",
-    "test": "echo none"
+    "knex:start": "knex migrate:latest && knex seed:run"
   },
   "keywords": [
     "api",
@@ -24,6 +23,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "body-parser": "^1.19.0",
+    "constants": "0.0.2",
     "express": "^4.17.1",
     "express-joi-validation": "^2.0.0",
     "joi": "^14.3.1",
