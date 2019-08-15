@@ -3,7 +3,7 @@ import Joi from "@hapi/joi";
 import ExpressJoi from "joi-express";
 
 // Controllers
-import t_delete from "../../Controllers/delete.js";
+import t_delete from "../../controllers/delete.js";
 import t_select from "../../controllers/select.js";
 import t_selectById from "../../controllers/selectById.js";
 import t_insert from "../../controllers/insert.js";
