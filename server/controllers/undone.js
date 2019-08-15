@@ -13,9 +13,13 @@ const response_builder = data => {
         description: data[0].description ? data[0].description : ""
       },
       links: [
+         {
+          rel: `/linkrels/tasks/${data[0].id}/done`,
+          uri: `/tasks/${data[0].id}/done`
+        },
         {
-          rel: `/linkrels/tasks/${data[0].id}/undone`,
-          uri: `/tasks/${data[0].id}/undone`
+          rel: `/linkrels/tasks/${data[0].id}/delete`,
+          uri: `/tasks/${data[0].id}/delete`
         }
       ]
     };
