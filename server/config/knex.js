@@ -5,5 +5,6 @@ export default knex({
 	connection: {
 		filename: "./behappy.sqlite",
 		charset: "utf8"
-	}
+	},
+    useNullAsDefault: true
 });

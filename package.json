@@ -7,7 +7,8 @@
     "start": "node bootstrap",
     "start:dev": "nodemon bootstrap",
     "knex:make": "knex migrate:make tasks && knex seed:make tasks",
-    "knex:start": "knex migrate:latest && knex seed:run"
+    "knex:start": "knex migrate:latest && knex seed:run",
+    "test": "echo none"
   },
   "keywords": [
     "api",

@@ -4,7 +4,7 @@ const response_builder = data => {
 	let response = {};
 
 	if(!data[0]) data[0] = {};
-	if (data.length > 0){
+	if (Object.values(data[0]).length > 0){
 		response = {
 			status: "200",
 			data: {
@@ -23,18 +23,19 @@ const response_builder = data => {
 	else {
 		response = {
 			status: "406",
-			data: "Gentileza não foi marcada como feita"
+			data: "Gentileza já foi marcada como feita!"
 		};
 		
-		return response;
 	};
+	
+	return response;
 }
 
 const response_code_builder = data => (data.length > 0 ? 200 : 406);
 
 export default function(req, res, next) {
 	Task.done(req.params.id)	
-	.then(tasks => data
+	.then(data => res
 		.status(response_code_builder(data))
 		.send(response_builder(data)))
 	.catch(err => res.send(err))

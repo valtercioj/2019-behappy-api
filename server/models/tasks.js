@@ -45,9 +45,13 @@ class Task {
 
     static done(id) {
         return knex(table_name)
-        .where("id", id)
+        .where("oid", id)
         .andWhere("done", false)
         .update("done", true)
+        .then(tasks_updated => {
+            if (tasks_updated > 0) return Task.getById(id);
+            else return [];
+        });
     }
 
     static deserialize(json) {

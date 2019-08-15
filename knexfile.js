@@ -6,9 +6,9 @@ module.exports = {
     client: "sqlite3",
     connection: {
       filename: "./behappy.sqlite",
-      charset: "utf8",
-      useNullAsDefault: true
-    }
+      charset: "utf8"
+    },
+    useNullAsDefault: true
   },
   production: {
     migrations: { tableName: "knex_migrations" },
@@ -17,8 +17,8 @@ module.exports = {
     client: "sqlite3",
     connection: {
       filename: "./behappy.sqlite",
-      charset: "utf8",
-      useNullAsDefault: true
+      charset: "utf8"
     }
+    useNullAsDefault: true
   }
 };

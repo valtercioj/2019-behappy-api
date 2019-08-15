@@ -8,6 +8,7 @@ import t_select from "../../controllers/select.js";
 import t_selectById from "../../controllers/selectById.js";
 import t_insert from "../../controllers/insert.js";
 import t_done from "../../controllers/done.js";
+import t_undone from "../../controllers/undone.js";
 
 // Config
 var router = express.Router();
@@ -30,5 +31,6 @@ router.post('/', ExpressJoi(querySchema), t_insert.bind(this));
 
 // done
 router.post('/:id/done', t_done.bind(this));
+router.post('/:id/undone', t_undone.bind(this));
 
 export default router;
